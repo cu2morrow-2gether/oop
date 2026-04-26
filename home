@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Diorene Mae Moralde — E-Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #FF70BF;
+  --pink-light: #FFD6EE;
+  --pink-pale: #FFF0F8;
+  --pink-deep: #D44A95;
+  --text: #3d2035;
+  --text-soft: #8a5a72;
+  --card-bg: rgba(255,255,255,0.72);
+  --card-border: rgba(255,255,255,0.9);
+  --shadow: 0 4px 24px rgba(255,105,180,0.13);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #ffdff0;
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 20%, rgba(255,180,220,0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 90% 80%, rgba(255,200,230,0.35) 0%, transparent 70%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+#float-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 14px;
+  z-index: 100;
+  width: calc(100% - 40px);
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 28px;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(255,255,255,0.95);
+  border-radius: 999px;
+  box-shadow: 0 4px 22px rgba(255,105,180,0.15);
+}
+
+.nav-logo {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--pink);
+}
+
+.nav-links {
+  display: flex;
+  gap: 5px;
+}
+
+.nav-links a {
+  padding: 7px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-soft);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--pink);
+  color: #fff;
+}
+
+.page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 55px 20px 30px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 20px;
+  background: rgba(255,255,255,0.88);
+  border: 1.5px solid rgba(255,112,191,0.3);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--pink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--pink);
+  text-shadow:
+    -3px -3px 0 #fff,
+     3px -3px 0 #fff,
+    -3px  3px 0 #fff,
+     3px  3px 0 #fff;
+  margin-bottom: 26px;
+}
+
+/* CARD */
+.card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  border-radius: 24px;
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* INTRO */
+.intro-box {
+  margin-top: 20px;
+  padding: 36px 40px 44px;
+}
+
+.intro-box-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--pink);
+  margin-bottom: 22px;
+}
+
+.intro-text {
+  font-size: 0.975rem;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+/* ABOUT */
+.section-heading {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--pink);
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+/* PROFILE */
+.profile-card {
+  padding: 32px 24px;
+  text-align: center;
+
+  /* ONLY CHANGE: width changed to match intro box */
+  max-width: 100%;
+  width: 100%;
+}
+
+.profile-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.avatar-ring {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--pink), #ffb3da, var(--pink));
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--pink-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2.5rem;
+  color: var(--pink);
+  border: 3px solid #fff;
+}
+
+.profile-name {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--pink);
+  margin-bottom: 4px;
+}
+
+.profile-uni {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+}
+
+.tag {
+  padding: 5px 13px;
+  background: var(--pink-light);
+  color: var(--pink-deep);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.stats-card {
+  margin-top: 28px;
+  padding: 28px 24px;
+  text-align: left;
+}
+
+.section-label {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--pink);
+  margin-bottom: 18px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0 10px;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+</style>
+</head>
+<body>
+
+<canvas id="float-canvas"></canvas>
+
+<nav>
+  <div class="nav-logo">✿ E-Portfolio</div>
+
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="midterm.html">Midterm</a>
+    <a href="final.html">Final</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <section class="hero">
+    <div class="hero-badge">E-Portfolio</div>
+
+    <h1>
+      Diorene Mae<br>
+      Moralde
+    </h1>
+
+    <div style="margin-bottom: 100px;"></div>
+
+    <div class="card intro-box">
+      <div class="intro-box-title">✦ Introduction</div>
+
+      <p class="intro-text">
+        This e-portfolio presents my Midterm Project in Object-Oriented Programming using Github.
+        It includes quizzes, activities, and exams that demonstrate my understanding of OOP concepts.
+      </p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-heading">✦ About Me</div>
+
+    <div class="profile-wrap">
+
+      <div class="card profile-card">
+
+        <div class="avatar-ring">
+          <div class="avatar-placeholder">D</div>
+        </div>
+
+        <div class="profile-name">Diorene</div>
+
+        <div class="profile-uni">
+          Polytechnic University of the Philippines<br>
+          Sta. Mesa, Manila · BSIT 2-1N
+        </div>
+
+        <div class="tags">
+          <span class="tag">kind</span>
+          <span class="tag">cute</span>
+          <span class="tag">super-amazing</span>
+          <span class="tag">one 'n only</span>
+        </div>
+
+        <div class="card stats-card">
+          <div class="section-label">✦ Character Stats</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Made with ♥ by Diorene Mae Moralde · PUP BSIT 2-1N · OOP E-Portfolio
+  </footer>
+
+</div>
+
+</body>
+</html>
