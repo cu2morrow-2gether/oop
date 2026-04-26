@@ -1,105 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Midterm Page</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Midterm — E-Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
-<div class="navbar">
-  <div>My Portfolio</div>
+<canvas id="float-canvas"></canvas>
 
-  <div>
-    <a href="home.html">Home</a>
-    <a href="#quizzes">Quizzes</a>
-    <a href="#seatwork">Seatwork</a>
-    <a href="#activities">Activities</a>
-    <a href="#exam">Exam</a>
-    <a href="#reflection">Reflection</a>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">✿ E-Portfolio</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="midterm.html" class="active">Midterm</a>
+    <a href="finals.html">Final</a>
+    <a href="contact.html">Contact</a>
   </div>
-</div>
+</nav>
 
-<div class="container">
+<div class="page-wrap">
 
-  <h1>Midterm Compilation</h1>
+<!-- HEADER -->
+<section class="hero">
+  <h1>Midterm<br>Portfolio</h1>
 
-  <!-- ================= QUIZZES ================= -->
-  <div id="quizzes" class="section">
-    <h2>📘 Quizzes</h2>
+  <p style="color: var(--text-soft); margin-top:10px;">
+    Quizzes, Seatworks, Activities, and Exam Outputs
+  </p>
+</section>
 
-    <div class="activity-card">
-      <h3>Quiz 1</h3>
+<!-- QUIZZES -->
+<section class="card">
+  <h2 style="font-family:'Fredoka'; color:var(--pink);">✦ Midterm Quizzes</h2>
 
-      <!-- ✏️ TYPE YOUR DETAILS HERE -->
-      <p><b>Remarks:</b> I wasn't fully prepared for the quiz but I do remember some from the lesson taught so I still got to answer a few.
-      If I remember correctly, it's about Introduction to Java and an overview of what OOP is. The basic structures of it and its history. </p>
-    </div>
+  <textarea placeholder="Write quiz questions, answers, and explanations here..."></textarea>
 
-  </div>
+  <input type="file">
+</section>
 
-  <!-- ================= SEATWORK ================= -->
-  <div id="seatwork" class="section">
-    <h2>📝 Seatwork</h2>
+<!-- SEATWORK -->
+<section class="card">
+  <h2 style="font-family:'Fredoka'; color:var(--pink);">✦ Midterm Seatwork</h2>
 
-    <div class="activity-card">
-      <h3>Seatwork 1</h3>
+  <textarea placeholder="Write seatwork answers or outputs here..."></textarea>
 
-      <!-- ✏️ TYPE HERE -->
-      <p><b>Score: 14/30</p>
-      <p><b>Reflection:</b> </p>
+  <input type="file">
+</section>
 
-  </div>
+<!-- ACTIVITIES -->
+<section class="card">
+  <h2 style="font-family:'Fredoka'; color:var(--pink);">✦ Midterm Activities</h2>
 
-  <!-- ================= ACTIVITIES ================= -->
-  <div id="activities" class="section">
-    <h2>💻 Activities</h2>
+  <textarea placeholder="Java programs, explanations, reflections..."></textarea>
 
-    <div class="activity-card">
-      <h3>Java ATM System</h3>
+  <input type="file">
+</section>
 
-      <!-- 📸 IMAGE -->
-      <p><b>📸 Program Screenshot:</b></p>
-      <img src="images/atm.png" alt="ATM System" width="300">
+<!-- EXAMS -->
+<section class="card">
+  <h2 style="font-family:'Fredoka'; color:var(--pink);">✦ Midterm Exam</h2>
 
-      <!-- ✏️ TYPE HERE -->
-      <p><b>Description:</b> Simulates deposit, withdrawal, and balance checking.</p>
-      <p><b>Reflection:</b> (type here)</p>
-    </div>
+  <textarea placeholder="Exam answers and explanations..."></textarea>
 
-  </div>
-
-  <!-- ================= EXAM ================= -->
-  <div id="exam" class="section">
-    <h2>📊 Exam</h2>
-
-    <div class="activity-card">
-      <h3>Midterm Exam</h3>
-
-      <!-- 📸 IMAGE -->
-      <p><b>📸 Exam Paper / Result:</b></p>
-      <img src="images/exam.png" alt="Midterm Exam" width="300">
-
-      <!-- ✏️ TYPE HERE -->
-      <p><b>Reflection:</b> (type here)</p>
-      <p><b>Score:</b> (type here)</p>
-    </div>
-
-  </div>
-
-  <!-- ================= OVERALL REFLECTION ================= -->
-  <div id="reflection" class="section">
-    <h2>🧠 Overall Reflection</h2>
-
-    <!-- ✏️ TYPE HERE -->
-    <p>
-      (Write your full midterm reflection here...)
-    </p>
-  </div>
+  <input type="file">
+</section>
 
 </div>
 
+<footer>
+  Midterm Portfolio © Diorene Mae Moralde
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
