@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Midterm - E-Portfolio</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #ffdff0;
+  padding: 20px;
+}
+
+.section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+h2 { color: #ff70bf; }
+
+textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+.preview {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px dashed #ff70bf;
+  border-radius: 10px;
+  background: #fff7fb;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Midterm Page</h1>
+
+<!-- QUIZZES -->
+<div class="section">
+  <h2>Midterm Quizzes</h2>
+
+  <label>Questions / Answers / Explanation:</label>
+  <textarea placeholder="Write your quiz answers and explanation here..."></textarea>
+
+  <label>Attach Files:</label>
+  <input type="file" multiple>
+
+  <div class="preview">Uploaded files will be shown here (for now visual only)</div>
+</div>
+
+<!-- SEATWORK -->
+<div class="section">
+  <h2>Midterm Seatwork</h2>
+
+  <label>Content:</label>
+  <textarea placeholder="Write seatwork answers and explanations..."></textarea>
+
+  <label>Attach Files:</label>
+  <input type="file" multiple>
+
+  <div class="preview">File previews area</div>
+</div>
+
+<!-- ACTIVITIES -->
+<div class="section">
+  <h2>Midterm Activities</h2>
+
+  <label>Java Programs / Explanation:</label>
+  <textarea placeholder="Describe your Java programs, learnings, etc..."></textarea>
+
+  <label>Code / Screenshot Upload:</label>
+  <input type="file" multiple>
+
+  <div class="preview">Code screenshots preview area</div>
+</div>
+
+<!-- EXAM -->
+<div class="section">
+  <h2>Midterm Exam</h2>
+
+  <label>Answers / Code:</label>
+  <textarea placeholder="Write exam answers or code here..."></textarea>
+
+  <label>Reflection:</label>
+  <textarea placeholder="Write your reflection here..."></textarea>
+
+  <label>Attach Exam Files:</label>
+  <input type="file" multiple>
+
+  <div class="preview">Exam attachments</div>
+</div>
+
+</body>
+</html>
